@@ -100,7 +100,7 @@ Aulthinfo = {}
                     Aulthinfo.alpha = 'false'
                     aniamatedegir = true
                     djsakduiahe789uhqrfyui = true
-                        sadsadsadfv()
+          
 
 --
 -- Citizen.CreateThread(function()
@@ -1493,3 +1493,4 @@ function sadsadsadfv()
         end
     end
 end
+sadsadsadfv()
