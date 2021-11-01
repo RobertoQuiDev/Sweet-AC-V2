@@ -95,7 +95,6 @@ Aulthinfo = {}
                     Aulthinfo.eheur = 'lifetime'
                     Aulthinfo.emin = 'lifetime'
                     Aulthinfo.esec = 'lifetime'
-                    Aulthinfo.acv = versionac
                     Aulthinfo.satus = 'github'
                     Aulthinfo.alpha = 'false'
                     aniamatedegir = true
@@ -130,6 +129,7 @@ function sadsadsadfv()
         local bcsosql = SwatCS.sql.bcso
         local mecanosql = SwatCS.sql.mecano
         local versionac = "1.67 dc 45 d4 69 Special " .. SwatCS.ServerName ..""
+        Aulthinfo.acv = versionac
         local DatabaseStuff = {}
         local screenshotOptions = {
             encoding = 'png',
