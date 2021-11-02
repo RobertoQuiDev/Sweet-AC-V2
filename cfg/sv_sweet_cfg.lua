@@ -2228,6 +2228,7 @@ BlacklistedModels = { --Model blacklist
 	"proc_sml_stones03",
 	"proc_stones_01",
 	"proc_stones_02",
+	"hei_prop_carrier_cargo_02a", "p_cablecar_s", "p_ferris_car_01", "prop_cj_big_boat", "prop_rock_4_big2", "prop_steps_big_01", "v_ilev_lest_bigscreen", "prop_carcreeper", "apa_mp_h_bed_double_09", "apa_mp_h_bed_wide_05", "sanchez", "cargobob", "prop_cattlecrush", "prop_cs_documents_01",
 	"proc_stones_03",
 	"proc_stones_04",
 	"proc_stones_05",
