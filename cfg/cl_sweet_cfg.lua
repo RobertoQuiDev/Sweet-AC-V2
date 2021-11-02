@@ -1,8 +1,8 @@
 SwatCC = {}
 SwatCC.Superjump = true
-SwatCC.AntiFreecam = true -- BUG
+SwatCC.AntiFreecam = false -- BUG
 SwatCC.votureflic = true
-SwatCC.antigmdemi = true -- BUG
+SwatCC.antigmdemi = false -- BUG
 SwatCC.antitp = true 
 SwatCC.AntiPNJ = true
 SwatCC.Prefix = "Sweet-AC"
