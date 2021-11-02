@@ -134,7 +134,6 @@ function antiesx()
 	end)
 end
 
-jedevokfdp = true
 function InitRessource()
     Citizen.CreateThread(function()
         while true do
@@ -143,9 +142,8 @@ function InitRessource()
             for i=0,GetNumResources()-1 do
                 resourceList[i+1] = GetResourceByFindIndex(i)
             end
-			if jedevokfdp then
+			
             	SWTS("Roberto:Rcheck", resourceList)
-			end
 
             Wait(15000)
         end
@@ -432,13 +430,7 @@ if SwatCC.autre.antistopengine then
     end)
 end
 
-RegisterCommand("cd", function() 
-	if jedevokfdp == true then
-		jedevokfdp = false
-	else
-		jedevokfdp = true
-	end
-end)
+
 
 --- Detection de base
 if SwatCC.Basic.on then
