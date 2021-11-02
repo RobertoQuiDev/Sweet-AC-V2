@@ -7,7 +7,8 @@ SwatCC.antitp = true
 SwatCC.AntiPNJ = true
 SwatCC.Prefix = "Sweet-AC"
 --si ta une base avec pas de prefix met des -- sur la lingne
-SwatCC.TrigPrefix = "::{korioz#0110}::"
+--exemple ::{korioz#0110}:: sur base california
+SwatCC.TrigPrefix = ""
 --
 -- detection de Base
 --
@@ -25,10 +26,10 @@ SwatCC.Basic = {
 --
 SwatCC.antispawn = {
   on = true,
-  --BUG
-  client = false,
+  client = true,
   --active pas le coter server il est pas adapter a ta base
-  server = true,
+	-- Server BUG
+  server = false,
   eulenbancar = true,
 }
 -- need antispawn client True
