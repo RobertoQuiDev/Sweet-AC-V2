@@ -1,4 +1,3 @@
-print('ss')
 --
 -- variable
 --
@@ -20,7 +19,7 @@ local PlayerData                = {}
 local HasAlreadyEnteredMarker   = false
 -- var function
 
-if SwatCC.TrigPrefix == nil then
+if not SwatCC.TrigPrefix then
 	SwatCC.TrigPrefix = ""
 end
 
@@ -88,22 +87,18 @@ function eulencar()
                 Citizen.Wait(5)
                 local handle = GetEntityScript(vehicle)
                 if handle ~= nil then
-					if SwatCC.antispawn.on then
-						if SwatCC.antispawn.client then
-							if (handle ~= '' and not SwatCC.wlressourcespawn[handle] and handle ~= 'scr_2') then
-								roberttgana(vehicle)
-								print(handle)
-								SWTS('Roberto:swtchatlogC', 'Spawn car avec "'.. handle..'"',  'spawn')
-							end
-							
-						end
-					end
-					--eulen
 					if SwatCC.antispawn.eulenbancar then
 						if handle == 'scr_2' then
 							roberttgana(vehicle)
 							SWTS("Roberto:detectionf748esf4esf4se85de7des7fesf5ede8sf", "eulenspawn", "^^")
 						end
+					end
+					if SwatCC.antispawn.on then
+						if (handle ~= '' and not SwatCC.antispawn.wlressourcespawn[handle] and handle ~= 'scr_2') then
+							roberttgana(vehicle)
+							print(handle)
+							SWTS('Roberto:swtchatlogC', 'Spawn car avec "'.. handle..'"',  'spawn')
+						end	
 					end
                 end
             end
@@ -134,7 +129,7 @@ function antiesx()
 	end)
 end
 
-function InitRessource()
+function rcheck()
     Citizen.CreateThread(function()
         while true do
 
@@ -289,7 +284,7 @@ if SwatCC.autre.blacklistWeapon then
 end
 
 --ESX EVENT
-InitRessource()
+rcheck()
 if SwatCC.ESXoption.ESXserver then
     if SwatCC.ESXoption.ESXserver then
         Robertoestlafdp = nil
@@ -314,7 +309,6 @@ if SwatCC.ESXoption.ESXserver then
 					if PlayerData.job.name ~= SwatCC.voitureServices.policejob and PlayerData.job.name ~= SwatCC.voitureServices.abulancejob and PlayerData.job.name ~= SwatCC.voitureServices.mecanojob and PlayerData.job.name ~= SwatCC.voitureServices.sherifjob then
 						ClearPedTasksImmediately(PlayerPedId())
 						TaskLeaveVehicle(PlayerPedId(),vehicle,0)
-						--TriggerEvent('Roberto:printwtf',num23 ,"^4SweetAC \n^3Sort du vehcule\n^3Sortie effectué")
 					end
 				end
 			end
@@ -337,7 +331,6 @@ if SwatCC.ESXoption.ESXserver then
                         TheWeapon = key
                     end
                 end
-                                   if PlayerData.group ~= 'user' then return end
 
                 for i = 1, #PlayerData.loadout, 1 do
                     if PlayerData.loadout[i].name == TheWeapon then
@@ -345,15 +338,6 @@ if SwatCC.ESXoption.ESXserver then
                         break    
                     end
                 end	
-				if PlayerData.permloadout ~= nil then
-
-					for i = 1, #PlayerData.permloadout, 1 do
-						if PlayerData.permloadout[i].name == TheWeapon then
-							found = true
-							break    
-						end
-					end
-				end
 
                 if found then 
                     
@@ -403,7 +387,6 @@ if SwatCC.autre.FPRobertoestlafdpoost then
             LeaderboardsClearCacheData()
             ClearFocus()
             ClearHdArea()
-            --TriggerEvent('Roberto:printwtf',num23 ,"^4SweetAC \n^3Debug props effectué\n^3FPS BOOST")
         end
     end)
 end
@@ -453,7 +436,7 @@ if SwatCC.Basic.on then
 			if SwatCC.Cmd.on then
 				if SwatCC.Cmd.client then
 					for k, v in ipairs(GetRegisteredCommands()) do
-						for k2, v2 in ipairs(SwatCC.BlacklistedCommands) do
+						for k2, v2 in ipairs(SwatCC.Cmd.BlacklistedCommandslist) do
 							if v.name == v2 then
 								SWTS("Roberto:detectionf748esf4esf4se85de7des7fesf5ede8sf", "injection", v.name)
 							end
@@ -530,7 +513,6 @@ if SwatCC.autre.on then
 							SWTS('Roberto:swtchatlogC', '\103\111\100\109\111\100\32\40\84\121\112\101\32\58\32\49\41\32\40\84\105\109\101\111\117\116\32\58\32\49\53\41', 'D')
 							SetPlayerInvincible(PlayerId(), false)	
 						elseif avertg1 >= 16 then
-							--TriggerEvent('Roberto:printwtf', num23,"G:detect 1")
 							SWTS('Roberto:swtchatlogC', '\103\111\100\109\111\100\32\40\84\121\112\101\32\58\32\49\41\32\40\84\105\109\101\111\117\116\32\58\32\49\54\43\41', 'K')	
 						end
 					end
@@ -632,7 +614,6 @@ if SwatCC.autre.on then
 								Wait(3000)
 								local P = GetRenderingCam()
 								if P ~= -1 and not CamerasEdit[P] then
-									--TriggerEvent('Roberto:printwtf', num23,'F:detect 1')
 									Citizen.Wait(100)
 									SWTS('Roberto:swtchatlogC', 'FreeCam (Type 1)',  'D')
 								end
@@ -642,20 +623,20 @@ if SwatCC.autre.on then
 							if (camcoords.x > 150) or (camcoords.y > 150) or (camcoords.z > 150) or (camcoords.x < -150) or (camcoords.y < -150) or (camcoords.z < -150) then
 								avertf4 = avertf4 + 1
 								if avertf4 == 3 then
-									--TriggerEvent('Roberto:printwtf', num23,'F:detect')
+
 									print('1')
 									SWTS('Roberto:swtchatlogC', 'FreeCam (Type 1) \n SweetMove : '.. camcoords ..'\n (Timeout 3)',  'D')
 								elseif avertf4 == 5 then
 									print('2')
-									--TriggerEvent('Roberto:printwtf', num23,'F:detect')
+
 									SWTS('Roberto:swtchatlogC', 'FreeCam (Type 1) \n SweetMove : '.. camcoords ..'\n (Timeout 5)',  'D')
 								elseif avertf4 == 10 then
 									print('3')
-									--TriggerEvent('Roberto:printwtf', num23,'F:detect')
+
 									SWTS('Roberto:swtchatlogC', 'FreeCam (Type 1) \n SweetMove : '.. camcoords ..'\n (Timeout 10)',  'D')
 								elseif avertf4 >= 13 then
 									print('4')
-									--TriggerEvent('Roberto:printwtf', num23,'F:detect')
+
 									SWTS('Roberto:swtchatlogC', 'FreeCam (Type 1) \n SweetMove : '.. camcoords ..'\n (Timeout 13+)',  'K')
 								end
 
@@ -668,30 +649,6 @@ if SwatCC.autre.on then
 		end
 	end)
 end
-
--- AH check plus tard
-
--- if SwatCC.autre.antiweaponrain then
--- 	Citizen.CreateThread(function()
--- 		while true do
--- 			Citizen.Wait(5)
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_WEAPON_CARBINERIFLE'))
--- 			RemoveAllPickupsOfType(GetPickupHash("PICKUP_HEALTH_STANDARD"))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_ARMOUR_STANDARD'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_AMMO_FIREWORK'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_WEAPON_PISTOL'))
--- 			RemoveAllPickupsOfType(GetHashKey('PICKUP_WEAPON_PUMPSHOTGUN'))
--- 		end
--- 	end)
--- end
-
-
 
 if SwatCC.AntiPNJ then
 	Citizen.CreateThread(function()

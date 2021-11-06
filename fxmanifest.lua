@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Roberto'
 description 'Sweet-AC coded by Roberto'
-version '15.1'
+version '1.67 dc 47 d8 77'
 
 client_script {
     "@es_extended/locale.lua",
