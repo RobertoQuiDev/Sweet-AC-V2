@@ -434,6 +434,9 @@ end
 --LOGS
 RegisterServerEvent('Roberto:swtchatlogS')
 AddEventHandler('Roberto:swtchatlogS', function(reason, servertarget, letter)
+        if servertarget ~= 0 then
+            servertarget = source
+        end
     if SwatCS.Chatdetect then
         if GetPlayerName(servertarget) ~= nil then
             if letter == 'D' then
